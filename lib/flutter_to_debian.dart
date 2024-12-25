@@ -398,10 +398,6 @@ Icon=${appExecutableName}
         desktop = await File(data.path).readAsString();
         desktop.trim();
 
-        // Override file from command line options without changing the file
-        desktop = desktop.replaceFirst(
-            RegExp(r'Version.*\n'), 'Version=${debianControl.version}\n');
-
         final String execPath = path.join(
           Vars.pathToFinalAppLocation.replaceFirst(
             Vars.newDebPackageDirPath,
